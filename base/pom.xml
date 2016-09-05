@@ -150,7 +150,5 @@
 			<version>1.2.2</version>
 		</dependency>
         
-        
     </dependencies>  
-    
 </project>

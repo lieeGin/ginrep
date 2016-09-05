@@ -14,13 +14,15 @@ public class TestController {
 
 	
 	 
-	@RequestMapping(value="/index",method=RequestMethod.GET)  
+   @RequestMapping(value="/index",method=RequestMethod.GET)  
    public ModelAndView index(HttpServletRequest request){
-		 ModelAndView modelAndView = new ModelAndView();  
+		ModelAndView modelAndView = new ModelAndView();  
  		modelAndView.setViewName("/index");  
        return modelAndView;  
    }  
 	 
+	
+	
 	
 	
 }
