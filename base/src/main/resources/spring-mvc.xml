@@ -56,5 +56,8 @@
 			<value>4096</value>
 		</property>
 	</bean>
+	
+	<!-- 用于初始化数据库  jdao  -->
+	<bean name="sysInit" class="com.base.servlet.InitServlet" init-method="init"> </bean>
 
 </beans>

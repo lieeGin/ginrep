@@ -61,14 +61,22 @@
 		<servlet-name>spring</servlet-name>
 		<url-pattern>*.htmls</url-pattern>
 	</servlet-mapping>
-
+	
+	<!-- 系统初始化  移动到spring-mvc中
+	<servlet> 
+		<servlet-name>init</servlet-name> 
+		<servlet-class>com.base.servlet.InitServlet</servlet-class> 
+		<load-on-startup>1</load-on-startup>
+	</servlet> 
+  -->
 	<!-- 配置session超时时间，单位分钟 -->
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
 
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>defaultTemplate/login.html</welcome-file>
+		<welcome-file>defaultTemplate/index.html</welcome-file>
 	</welcome-file-list>
 	
 </web-app>
