@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@include file="./head.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <meta charset="utf-8">
@@ -1205,6 +1206,7 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+  alert('${base_url}');
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src='./plugin/AdminLTE-2.3.6/bootstrap/js/bootstrap.min.js'></script>

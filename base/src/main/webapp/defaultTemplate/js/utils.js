@@ -1,3 +1,10 @@
+var baseUrl="http://localhost:8084";
+var serverName="base";
+function root(){
+	return baseUrl+"/"+serverName;
+}
+
+
 function getRootPath_web() {
     //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
     var curWwwPath = window.document.location.href;

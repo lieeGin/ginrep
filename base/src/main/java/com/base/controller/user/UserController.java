@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.base.common.BaseReturnModel;
 import com.base.controller.BaseController;
 
-@Controller("base/user")
+@Controller
+@RequestMapping("/user") 
 public class UserController extends BaseController{
 	
 	
-	@RequestMapping(value = "/saveOrUpdate", method = {RequestMethod.POST})
+	@RequestMapping(value = "/saveOrUpdate", method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
 	public BaseReturnModel saveOrUpdate(HttpServletRequest request) {
 		
