@@ -60,7 +60,7 @@ public class CreateDao {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new CreateDao().createDao4jdbc("com.base.dao", "sys_user", System.getProperty("user.dir") + "\\src\\main\\java\\com\\base\\dao");
+		new CreateDao().createDao4jdbc("com.base.dao", "sys_menu", System.getProperty("user.dir") + "\\src\\main\\java\\com\\base\\dao");
 		// test();
 	}
 }

@@ -1,5 +1,6 @@
 package com.base.controller.admin;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -75,6 +76,10 @@ public class AdminController extends BaseController{
 					request.getSession().setAttribute("userId", dbUser.getId());
 					request.getSession().setAttribute("userName", dbUser.getUserName());
 					request.getSession().setAttribute("displayName", dbUser.getDisplayName());
+					// 更新用户的最后登录时间
+					dbUser.setLastLoginTime(new Date());
+					dbUser.where(SysUser.ID.EQ(dbUser.getId()));
+					dbUser.update();
 				}
 			}catch(Exception e){
 				logger.error("查询用户错误", e);

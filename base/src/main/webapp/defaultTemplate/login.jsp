@@ -78,6 +78,7 @@
 
 <script>
   var path = '${path}';
+  var basePath = '${basePath}';
   $(function () {
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',

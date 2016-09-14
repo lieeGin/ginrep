@@ -19,10 +19,7 @@ $(function(){
        		success: function(data){
        			if(data.success){
        				$("#errmsg").html("");
-       				$.ajax({  
-       		       		type: "post",  
-       				    url: path+"/admin/index"
-       				});
+       				location.href=basePath+"admin/index"
        			}else{
        				$("#errmsg").html(data.errMsg);
        			}

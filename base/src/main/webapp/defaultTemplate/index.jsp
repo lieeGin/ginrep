@@ -7,8 +7,8 @@
   <title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- 公共样式-->
-  <link rel="stylesheet" href="./defaultTemplate/css/style.css">
+  <!-- 共用css -->
+  <link rel="stylesheet" href="${path}/defaultTemplate/css/style.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +51,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="./plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -64,7 +64,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="./plugin/AdminLTE-2.3.6/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -76,7 +76,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="./plugin/AdminLTE-2.3.6/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -88,7 +88,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="./plugin/AdminLTE-2.3.6/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -100,7 +100,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="./plugin/AdminLTE-2.3.6/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -233,13 +233,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="./plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="./plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -287,7 +287,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="./plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -599,7 +599,7 @@
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
               <div class="item">
-                <img src="./plugin/AdminLTE-2.3.6/dist/img/user4-128x128.jpg" alt="user image" class="online">
+                <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user4-128x128.jpg" alt="user image" class="online">
 
                 <p class="message">
                   <a href="#" class="name">
@@ -626,7 +626,7 @@
               <!-- /.item -->
               <!-- chat item -->
               <div class="item">
-                <img src="./plugin/AdminLTE-2.3.6/dist/img/user3-128x128.jpg" alt="user image" class="offline">
+                <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user3-128x128.jpg" alt="user image" class="offline">
 
                 <p class="message">
                   <a href="#" class="name">
@@ -641,7 +641,7 @@
               <!-- /.item -->
               <!-- chat item -->
               <div class="item">
-                <img src="./plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" alt="user image" class="offline">
+                <img src="${path}/plugin/AdminLTE-2.3.6/dist/img/user2-160x160.jpg" alt="user image" class="offline">
 
                 <p class="message">
                   <a href="#" class="name">
@@ -1200,13 +1200,12 @@
 <object type="text/x-scriptlet" data="./defaultTemplate/common/common.html" width=100% height=30></object>
 </div> -->
  <!-- jQuery 2.2.3 -->
-<script src='./plugin/AdminLTE-2.3.6/plugins/jQuery/jquery-2.2.3.min.js'></script>
+<script src='${path}/plugin/AdminLTE-2.3.6/plugins/jQuery/jquery-2.2.3.min.js'></script>
 <!-- jQuery UI 1.11.4 -->
 <script src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js'></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
-  alert('${base_url}');
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src='${path}/plugin/AdminLTE-2.3.6/bootstrap/js/bootstrap.min.js'></script>
