@@ -157,7 +157,7 @@
 	        <version>1.1</version>  
 	        <scope>system</scope>  
 	        <!--本地jar的路径,相对或者绝对都可以-->  
-	        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/jdao1.1.jar</systemPath>  
+	        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/jdao1.1.1.jar</systemPath>  
 	</dependency>  
 	
 	<!-- c3p0 与jdao一起使用的本地版本 -->
