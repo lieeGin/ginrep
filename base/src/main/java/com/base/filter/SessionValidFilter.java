@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.base.common.ApplicationProperties;
 import com.base.utils.StringUtil;
 
+/**
+ * 针对登录的过滤器
+ * @author lieeGin
+ *
+ */
 public class SessionValidFilter implements Filter  {
 	
 	

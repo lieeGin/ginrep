@@ -17,6 +17,7 @@ import com.base.controller.BaseController;
 import com.base.dao.SysUser;
 import com.base.security.AbstractAuthFilter;
 import com.base.security.AuthenticationManager;
+import com.base.service.common.CommonService;
 import com.base.utils.StringUtil;
 
 @Controller
@@ -26,20 +27,27 @@ public class AdminController extends BaseController{
 	@Autowired
 	private AuthenticationManager manager;
 	
+	@Autowired 
+	public CommonService commonService;
+	
 	
 	@RequestMapping(value = "/login", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView loginPage(HttpServletRequest request) {
-		
+		commonService.freshTemplate(request);
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/defaultTemplate/login");
+		String sessionTemplate = (String)request.getSession().getAttribute("templateName");
+		mv.setViewName("/"+sessionTemplate+"Template/login");
 		return mv;
 	}
+	
 	
 
 	@RequestMapping(value = "/index", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView index(HttpServletRequest request) {
+		commonService.freshTemplate(request);
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/defaultTemplate/index");
+		String sessionTemplate = (String)request.getSession().getAttribute("templateName");
+		mv.setViewName("/"+sessionTemplate+"Template/index");
 		return mv;
 	}
 	

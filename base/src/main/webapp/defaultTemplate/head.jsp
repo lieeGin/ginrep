@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="${path}/defaultTemplate/css/style.css">
   
   <!-- jQuery 2.2.3 -->
-<script src="${path}/plugin/AdminLTE-2.3.6/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="${path}/defaultTemplate/plugin/AdminLTE-2.3.6/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script>
 	$(document).ajaxComplete(function(event, xhr, settings) {
 	    if(xhr.getResponseHeader("sessionstatus")=="timeOut"){

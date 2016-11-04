@@ -1,10 +1,24 @@
 package com.base.utils;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
+import com.base.exception.BaseException;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 public class ArrayUtil {
+	
+  public final static ObjectMapper mapper = new ObjectMapper(); 
+	
 	public static int[] stringToIntArray(String s, String division) {
-		if (s == null || s.length() == 0) return new int[0];
+		if (s == null || s.length() == 0)
+			return new int[0];
 		String tmpData[] = s.split(division);
 		int rc[] = new int[tmpData.length];
 		for (int i = 0; i < tmpData.length; i++)
@@ -14,7 +28,8 @@ public class ArrayUtil {
 	}
 
 	public static String intArrayToString(int data[], String division) {
-		if (data == null || data.length == 0) return "";
+		if (data == null || data.length == 0)
+			return "";
 		StringBuffer sb = new StringBuffer();
 		sb.append(data[0]);
 		for (int i = 1; i < data.length; i++) {
@@ -26,9 +41,11 @@ public class ArrayUtil {
 	}
 
 	public static String intArrayToString(int data[][], int pos, String division) {
-		if (data == null || data.length == 0) return "";
+		if (data == null || data.length == 0)
+			return "";
 		StringBuffer sb = new StringBuffer();
-		if (data[0].length < pos + 1) return "";
+		if (data[0].length < pos + 1)
+			return "";
 		sb.append(data[0][pos]);
 		for (int i = 1; i < data.length; i++) {
 			if (data[i].length >= pos + 1) {
@@ -41,12 +58,14 @@ public class ArrayUtil {
 	}
 
 	public static String[] stringToArray(String s, String division) {
-		if (s == null || s.length() == 0) return new String[0];
+		if (s == null || s.length() == 0)
+			return new String[0];
 		return s.split(division, -1);
 	}
 
 	public static String arrayToString(String data[], String division) {
-		if (data == null || data.length == 0) return "";
+		if (data == null || data.length == 0)
+			return "";
 		StringBuffer sb = new StringBuffer(data[0]);
 		for (int i = 1; i < data.length; i++) {
 			sb.append(division);
@@ -57,8 +76,10 @@ public class ArrayUtil {
 	}
 
 	public static String arrayToString(String data[][], int pos, String division) {
-		if (data == null || data.length == 0) return "";
-		if (data[0].length < pos + 1) return "";
+		if (data == null || data.length == 0)
+			return "";
+		if (data[0].length < pos + 1)
+			return "";
 		StringBuffer sb = new StringBuffer(data[0][pos]);
 		for (int i = 1; i < data.length; i++) {
 			if (data[i].length >= pos + 1) {
@@ -71,7 +92,8 @@ public class ArrayUtil {
 	}
 
 	public static String[] quoteStringToArray(String s, String division, String quote) {
-		if (s == null || s.length() == 0) return new String[0];
+		if (s == null || s.length() == 0)
+			return new String[0];
 		ArrayList<String> list = new ArrayList<String>();
 		String tmp[] = s.split(division, -1);
 		for (int i = 0; i < tmp.length; i++) {
@@ -99,7 +121,8 @@ public class ArrayUtil {
 
 	private static int[] countQuote(String value, String quote) {
 		int rc[] = { 0, 0 };
-		if (value == null || value.length() < quote.length()) return rc;
+		if (value == null || value.length() < quote.length())
+			return rc;
 		for (int j = 0; j <= value.length() - quote.length(); j += quote.length()) {
 			if (!value.substring(j, j + quote.length()).equals(quote)) {
 				break;
@@ -117,7 +140,8 @@ public class ArrayUtil {
 	}
 
 	public static String arrayToQuoteString(String data[], String division, String quote) {
-		if (data == null || data.length == 0) return "";
+		if (data == null || data.length == 0)
+			return "";
 		StringBuffer sb = new StringBuffer(quote + data[0] + quote);
 		for (int i = 1; i < data.length; i++) {
 			sb.append(division);
@@ -130,8 +154,10 @@ public class ArrayUtil {
 	}
 
 	public static String arrayToSingleQuoteString(String data[][], int pos, String division, String quote) {
-		if (data == null || data.length == 0) return "";
-		if (data[0].length < pos + 1) return "";
+		if (data == null || data.length == 0)
+			return "";
+		if (data[0].length < pos + 1)
+			return "";
 		StringBuffer sb = new StringBuffer(quote + data[0][pos] + quote);
 		for (int i = 1; i < data.length; i++) {
 			if (data[i].length >= pos + 1) {
@@ -212,5 +238,37 @@ public class ArrayUtil {
 
 		return rc;
 	}
+
+	/**
+	 * 获取泛型的Collection Type
+	 * 
+	 * @param collectionClass
+	 *            泛型的Collection
+	 * @param elementClasses
+	 *            元素类
+	 * @return JavaType Java类型
+	 * @since 1.0
+	 */
+	public static List getListFromJson(String jsonString,  Class<?>... elementClasses) {
+		
+		JavaType javaType = mapper.getTypeFactory().constructParametricType( ArrayList.class , elementClasses); 
+		List lst = new ArrayList();
+		try {
+			if(StringUtil.isEmpty(jsonString)){
+				return lst;
+			}
+			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);  // 未知属性不转
+			lst = (List) mapper.readValue(jsonString, javaType);
+		} catch (JsonParseException e) {
+			throw new BaseException(e);
+		} catch (JsonMappingException e) {
+			throw new BaseException(e);
+		} catch (IOException e) {
+			throw new BaseException(e);
+		} 
+		return lst;
+	}
+	
+	
 
 }

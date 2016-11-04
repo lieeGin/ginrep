@@ -8,7 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- iCheck -->
-  <link rel="stylesheet" href="${path}/plugin/AdminLTE-2.3.6/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="${path}/defaultTemplate/plugin/AdminLTE-2.3.6/plugins/iCheck/square/blue.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,11 +70,11 @@
 <!-- /.login-box -->
 
 <!-- jQuery 2.2.3 -->
-<script src="${path}/plugin/AdminLTE-2.3.6/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="${path}/defaultTemplate/plugin/AdminLTE-2.3.6/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="${path}/plugin/AdminLTE-2.3.6/bootstrap/js/bootstrap.min.js"></script>
+<script src="${path}/defaultTemplate/plugin/AdminLTE-2.3.6/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="${path}/plugin/AdminLTE-2.3.6/plugins/iCheck/icheck.min.js"></script>
+<script src="${path}/defaultTemplate/plugin/AdminLTE-2.3.6/plugins/iCheck/icheck.min.js"></script>
 
 <script>
   var path = '${path}';

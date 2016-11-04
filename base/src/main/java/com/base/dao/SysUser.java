@@ -5,7 +5,7 @@ import com.jdao.base.Table;
 import com.jdao.base.Fields;
 
 /**
- * @date 2016-09-08 17:04:08  dao for table sys_user
+ * @date 2016-11-02 11:57:08  dao for table sys_user
  */
 public class SysUser extends Table<SysUser> implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -32,7 +32,7 @@ public class SysUser extends Table<SysUser> implements Serializable{
 	private int id = 0;
 	private java.lang.String userName;
 	private java.lang.String displayName;
-	private java.lang.String sex;
+	private int sex = 0;
 	private java.lang.String password;
 	private java.lang.String mobilePhone;
 	private java.lang.String email;
@@ -73,11 +73,11 @@ public class SysUser extends Table<SysUser> implements Serializable{
 		fieldValueMap.put(DISPLAYNAME, displayName);
 		 this.displayName=displayName;
 	}
-	public java.lang.String getSex(){
+	public int getSex(){
 		return this.sex;
 	}
 
-	public void setSex(java.lang.String sex){
+	public void setSex(int sex){
 		fieldValueMap.put(SEX, sex);
 		 this.sex=sex;
 	}

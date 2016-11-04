@@ -5,7 +5,7 @@ import com.jdao.base.Table;
 import com.jdao.base.Fields;
 
 /**
- * @date 2016-09-14 16:05:41  dao for table sys_menu
+ * @date 2016-11-01 16:17:28  dao for table sys_menu
  */
 public class SysMenu extends Table<SysMenu> implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -18,20 +18,26 @@ public class SysMenu extends Table<SysMenu> implements Serializable{
 	public final static Fields PARENTID = new Fields("`parent_id`");
 	/**level*/
 	public final static Fields LEVEL = new Fields("`level`");
+	/**url*/
+	public final static Fields URL = new Fields("`url`");
+	/**display_order*/
+	public final static Fields DISPLAYORDER = new Fields("`display_order`");
 
 	private int id = 0;
 	private java.lang.String menuName;
 	private int parentId = 0;
 	private int level = 0;
+	private java.lang.String url;
+	private int displayOrder = 0;
 
 	public SysMenu(){
 		super(TABLENAME_,SysMenu.class);
-		super.setFields(ID,MENUNAME,PARENTID,LEVEL);
+		super.setFields(ID,MENUNAME,PARENTID,LEVEL,URL,DISPLAYORDER);
 	}
 
 	public SysMenu(String tableName4sharding){
 		super(tableName4sharding,SysMenu.class);
-		super.setFields(ID,MENUNAME,PARENTID,LEVEL);
+		super.setFields(ID,MENUNAME,PARENTID,LEVEL,URL,DISPLAYORDER);
 	}
 
 	public int getId(){
@@ -65,5 +71,21 @@ public class SysMenu extends Table<SysMenu> implements Serializable{
 	public void setLevel(int level){
 		fieldValueMap.put(LEVEL, level);
 		 this.level=level;
+	}
+	public java.lang.String getUrl(){
+		return this.url;
+	}
+
+	public void setUrl(java.lang.String url){
+		fieldValueMap.put(URL, url);
+		 this.url=url;
+	}
+	public int getDisplayOrder(){
+		return this.displayOrder;
+	}
+
+	public void setDisplayOrder(int displayOrder){
+		fieldValueMap.put(DISPLAYORDER, displayOrder);
+		 this.displayOrder=displayOrder;
 	}
 }
