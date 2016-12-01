@@ -17,7 +17,7 @@ public class CreateDao {
 			Class.forName("com.mysql.jdbc.Driver");
 			String driverUrl = "jdbc:mysql://localhost:3306/mydatabase";
 			String username = "root";
-			String password = "root";
+			String password = "123456";
 			conn = DriverManager.getConnection(driverUrl, username, password);
 		} catch (Exception e) {
 		}
